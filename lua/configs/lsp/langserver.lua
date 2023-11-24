@@ -19,10 +19,6 @@ lspconfig.lua_ls.setup({
     on_init = on_init,
     settings = {
         Lua = {
-            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-            telemetry = {
-                enable = false,
-            },
             diagnostics = {
                 enable = true,
                 globals = { "vim" },

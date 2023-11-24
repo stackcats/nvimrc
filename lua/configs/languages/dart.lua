@@ -1,11 +1,11 @@
 require("configs.lsp.custom")
 
-require("flutter-tools").setup {
+require("flutter-tools").setup({
     lsp = {
         color = {
             enabled = true,
             background = true,
-            virtual_text = false
+            virtual_text = false,
         },
         on_init = on_init,
         on_attach = function()
@@ -14,9 +14,9 @@ require("flutter-tools").setup {
                 "n",
                 "<Leader>r",
                 require("telescope").extensions.flutter.commands,
-                {desc = "Telescope: Flutter Commands"}
+                { desc = "Telescope: Flutter Commands" }
             )
         end,
-        capabilities = custom_capabilities()
-    }
-}
+        capabilities = custom_capabilities(),
+    },
+})

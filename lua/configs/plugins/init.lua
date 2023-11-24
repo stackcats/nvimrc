@@ -2,30 +2,28 @@
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system(
-        {
-            "git",
-            "clone",
-            "--filter=blob:none",
-            "https://github.com/folke/lazy.nvim.git",
-            "--branch=stable", -- latest stable release
-            lazypath
-        }
-    )
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     -- deps
-    {"nvim-tree/nvim-web-devicons", lazy = true},
-    {"nvim-lua/plenary.nvim", lazy = true},
+    { "nvim-tree/nvim-web-devicons", lazy = true },
+    { "nvim-lua/plenary.nvim", lazy = true },
     -- colorscheme
     {
         "rebelot/kanagawa.nvim",
         priority = 1000,
         config = function()
             require("configs.ui.colorscheme")
-        end
+        end,
     },
     -- completions
     {
@@ -41,69 +39,69 @@ local plugins = {
                 dependencies = "hrsh7th/vim-vsnip",
                 init = function()
                     vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
-                end
+                end,
             },
             {
                 "windwp/nvim-autopairs",
                 event = "InsertEnter",
-                opts = {}
-            }
+                opts = {},
+            },
         },
         config = function()
             require("configs.completion.cmp")
-        end
+        end,
     },
     -- lsp
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            {"williamboman/mason.nvim"},
-            {"williamboman/mason-lspconfig.nvim"},
+            { "williamboman/mason.nvim" },
+            { "williamboman/mason-lspconfig.nvim" },
             {
                 "folke/trouble.nvim",
                 config = function()
                     require("configs.lsp.trouble")
-                end
+                end,
             },
             {
                 "nvimdev/lspsaga.nvim",
                 config = function()
                     require("configs.lsp.saga")
-                end
+                end,
             },
             {
                 "jay-babu/mason-null-ls.nvim",
-                event = {"BufReadPre", "BufNewFile"},
+                event = { "BufReadPre", "BufNewFile" },
                 dependencies = {
                     "williamboman/mason.nvim",
-                    "nvimtools/none-ls.nvim"
+                    "nvimtools/none-ls.nvim",
                 },
                 config = function()
                     require("configs.lsp.nulls")
-                end
-            }
+                end,
+            },
         },
         config = function()
             require("configs.lsp.langserver")
-        end
+        end,
     },
     -- AI
     {
         "Exafunction/codeium.nvim",
         config = function()
             require("codeium").setup({})
-        end
+        end,
     },
     -- editor
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-telescope/telescope-ui-select.nvim",
-            "nvim-telescope/telescope-fzy-native.nvim"
+            "nvim-telescope/telescope-fzy-native.nvim",
         },
         config = function()
             require("configs.editor.telescope")
-        end
+        end,
     },
     {
         "folke/which-key.nvim",
@@ -112,63 +110,63 @@ local plugins = {
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-        opts = {}
+        opts = {},
     },
     {
         "NeogitOrg/neogit",
         config = function()
             require("configs.editor.neogit")
-        end
+        end,
     },
     {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("configs.editor.gitsigns")
-        end
+        end,
     },
     {
         "smoka7/hop.nvim",
         version = "*",
-        opts = {}
+        opts = {},
     },
     {
         "numToStr/Comment.nvim",
-        config = true
+        config = true,
     },
     {
         "t9md/vim-choosewin",
-        cmd = {"ChooseWin"},
+        cmd = { "ChooseWin" },
         config = function()
             require("configs.editor.choosewin")
-        end
+        end,
     },
     {
         "nvimdev/dashboard-nvim",
         event = "VimEnter",
         config = function()
             require("configs.editor.dashboard")
-        end
+        end,
     },
-    {"wakatime/vim-wakatime", lazy = false},
+    { "wakatime/vim-wakatime", lazy = false },
     -- UI
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("configs.ui.treesitter")
-        end
+        end,
     },
     {
         "nvim-lualine/lualine.nvim",
         config = function()
             require("configs.ui.lualine")
-        end
+        end,
     },
     {
         "norcalli/nvim-colorizer.lua",
-        cmd = {"ColorizerToggle"},
+        cmd = { "ColorizerToggle" },
         config = function()
             require("configs.ui.colorizer")
-        end
+        end,
     },
     -- Languages
     {
@@ -182,23 +180,20 @@ local plugins = {
                     vim.g.dart_style_guide = 2
                     vim.g.dart_html_in_string = true
                     vim.g.dart_trailing_comma_indent = true
-                    vim.g.dartfmt_options = {"--fix"}
+                    vim.g.dartfmt_options = { "--fix" }
                     vim.g.dart_format_on_save = 1
-                end
+                end,
             },
-            "Nash0x7E2/awesome-flutter-snippets"
+            "Nash0x7E2/awesome-flutter-snippets",
         },
         config = function()
             require("configs.languages.dart")
-        end
-    }
+        end,
+    },
 }
 
-require("lazy").setup(
-    plugins,
-    {
-        ui = {
-            border = "single"
-        }
-    }
-)
+require("lazy").setup(plugins, {
+    ui = {
+        border = "single",
+    },
+})

@@ -1,4 +1,4 @@
-local ft = {"*"}
+local ft = { "*" }
 
 local options = {
     RGB = true,
@@ -9,7 +9,7 @@ local options = {
     hsl_fn = true,
     css = true,
     css_fn = true,
-    mode = "background"
+    mode = "background",
 }
 
 require("colorizer").setup(ft, options)

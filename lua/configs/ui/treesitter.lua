@@ -4,24 +4,24 @@ local opt = {
         "lua",
         "markdown",
         "markdown_inline",
-        "python"
+        "python",
     },
     highlight = {
         enable = true,
-        use_languagetree = true
+        use_languagetree = true,
     },
     indent = {
         enable = true,
-        disable = {"python"}
+        disable = { "python" },
     },
     autopairs = {
-        enable = true
+        enable = true,
     },
     playground = {
         enable = true,
         updatetime = 25,
-        persist_queries = false
-    }
+        persist_queries = false,
+    },
 }
 
 require("nvim-treesitter.configs").setup(opt)

@@ -12,7 +12,7 @@ local options = {
             "--with-filename",
             "--line-number",
             "--column",
-            "--smart-case"
+            "--smart-case",
         },
         results_title = "",
         entry_prefix = "   ",
@@ -21,10 +21,10 @@ local options = {
         selection_caret = " ❱ ",
         initial_mode = "insert",
         selection_strategy = "reset",
-        file_ignore_patterns = {"^node_modules/"},
+        file_ignore_patterns = { "^node_modules/" },
         file_sorter = sorters.get_fzy_sorter,
         generic_sorter = sorters.get_generic_fzy_sorter,
-        path_display = {"absolute"},
+        path_display = { "absolute" },
         winblend = 0,
         color_devicons = true,
         use_less = false,
@@ -35,8 +35,8 @@ local options = {
         sorting_strategy = "descending",
         layout_config = {
             preview_cutoff = 1,
-            height = 0.6
-        }
+            height = 0.6,
+        },
     },
     pickers = {
         diagnostics = {
@@ -44,11 +44,11 @@ local options = {
             line_width = 0.7,
             no_unlisted = true,
             path_display = {
-                "hidden"
-            }
+                "hidden",
+            },
         },
         find_files = {
-            previewer = false
+            previewer = false,
         },
         oldfiles = {
             previewer = false,
@@ -56,55 +56,60 @@ local options = {
                 "/usr/share/nvim/runtime/*",
                 vim.fn.stdpath("data"),
                 vim.fn.stdpath("cache"),
-                vim.fn.stdpath("log")
-            }
+                vim.fn.stdpath("log"),
+            },
         },
         builtin = {
-            previewer = false
+            previewer = false,
         },
         current_buffer_fuzzy_find = {
-            previewer = false
+            previewer = false,
         },
         autocommands = {
-            previewer = false
+            previewer = false,
         },
         lsp_document_symbols = {
             previewer = false,
-            symbol_width = 0.7
+            symbol_width = 0.7,
         },
         lsp_workspace_symbols = {
             previewer = false,
-            symbol_width = 0.7
+            symbol_width = 0.7,
         },
         buffers = {
             previewer = false,
             ignore_current_buffer = true,
-            sort_lastused = true
-        }
+            sort_lastused = true,
+        },
     },
     extensions = {
         fzy_native = {
             override_generic_sorter = true,
-            override_file_sorter = true
-        }
-    }
+            override_file_sorter = true,
+        },
+    },
 }
 
 telescope.setup(options)
 telescope.load_extension("ui-select")
 telescope.load_extension("fzy_native")
 
-keymap.set("n", "<Leader>0", require("telescope.builtin").oldfiles, {desc = "Telescope: Lists previously open files"})
+keymap.set("n", "<Leader>0", require("telescope.builtin").oldfiles, { desc = "Telescope: Lists previously open files" })
 keymap.set(
     "n",
     "<Leader>b",
     require("telescope.builtin").buffers,
-    {desc = "Telescope: Lists open buffers in current neovim instance"}
+    { desc = "Telescope: Lists open buffers in current neovim instance" }
 )
-keymap.set("n", "<Leader>f", require("telescope.builtin").find_files, {desc = "Telescope: Open files"})
-keymap.set("n", "<Leader>m", require("telescope.builtin").marks, {desc = "Telescope: Lists vim marks"})
-keymap.set("n", "<Leader><Leader>", require("telescope.builtin").builtin, {desc = "Telescope: Open builtin function"})
-keymap.set("n", "<Leader>k", require("telescope.builtin").keymaps, {desc = "Telescope: Lists normal mode keymappings"})
-keymap.set("n", "<Leader>c", require("telescope.builtin").commands, {desc = "Telescope: Lists vim autocommands"})
-keymap.set("n", "<Leader>d", require("telescope.builtin").diagnostics, {desc = "Telescope: Lists diagnostics"})
-keymap.set("n", "<Leader>sp", require("telescope.builtin").live_grep, {desc = "Telescope: Search Project"})
+keymap.set("n", "<Leader>f", require("telescope.builtin").find_files, { desc = "Telescope: Open files" })
+keymap.set("n", "<Leader>m", require("telescope.builtin").marks, { desc = "Telescope: Lists vim marks" })
+keymap.set("n", "<Leader><Leader>", require("telescope.builtin").builtin, { desc = "Telescope: Open builtin function" })
+keymap.set(
+    "n",
+    "<Leader>k",
+    require("telescope.builtin").keymaps,
+    { desc = "Telescope: Lists normal mode keymappings" }
+)
+keymap.set("n", "<Leader>c", require("telescope.builtin").commands, { desc = "Telescope: Lists vim autocommands" })
+keymap.set("n", "<Leader>d", require("telescope.builtin").diagnostics, { desc = "Telescope: Lists diagnostics" })
+keymap.set("n", "<Leader>sp", require("telescope.builtin").live_grep, { desc = "Telescope: Search Project" })
