@@ -142,6 +142,14 @@ local plugins = {
             require("configs.editor.choosewin")
         end
     },
+    {
+        "nvimdev/dashboard-nvim",
+        event = "VimEnter",
+        config = function()
+            require("configs.editor.dashboard")
+        end
+    },
+    {"wakatime/vim-wakatime", lazy = false},
     -- UI
     {
         "nvim-treesitter/nvim-treesitter",
