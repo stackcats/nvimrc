@@ -4,6 +4,7 @@ local opt = {
         "lua",
         "markdown",
         "markdown_inline",
+        "rust",
         "python",
     },
     highlight = {

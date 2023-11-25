@@ -8,11 +8,13 @@ vim.opt.showtabline = 0
 vim.opt.signcolumn = "yes:1"
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
+vim.opt.expandtab = true
 -- line number
 vim.wo.number = true
 
 vim.diagnostic.config({
     virtual_text = true,
+    update_in_insert = true,
     underline = true,
     signs = false,
 })

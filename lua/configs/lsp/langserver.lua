@@ -1,3 +1,5 @@
+local util = require("lspconfig/util")
+
 require("configs.lsp.custom")
 
 require("mason").setup({
@@ -8,6 +10,7 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
         "pyright",
+        "rust_analyzer",
     },
 })
 
@@ -19,6 +22,7 @@ lspconfig.lua_ls.setup({
     on_init = on_init,
     settings = {
         Lua = {
+            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
             diagnostics = {
                 enable = true,
                 globals = { "vim" },

@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     -- deps
     { "nvim-tree/nvim-web-devicons", lazy = true },
-    { "nvim-lua/plenary.nvim", lazy = true },
+    { "nvim-lua/plenary.nvim",       lazy = true },
     -- colorscheme
     {
         "rebelot/kanagawa.nvim",
@@ -33,6 +33,7 @@ local plugins = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
             "hrsh7th/cmp-path",
             {
                 "hrsh7th/cmp-vsnip",
@@ -98,6 +99,8 @@ local plugins = {
         dependencies = {
             "nvim-telescope/telescope-ui-select.nvim",
             "nvim-telescope/telescope-fzy-native.nvim",
+            "cljoly/telescope-repo.nvim",
+            "nvim-telescope/telescope-project.nvim",
         },
         config = function()
             require("configs.editor.telescope")
@@ -148,6 +151,13 @@ local plugins = {
         end,
     },
     { "wakatime/vim-wakatime", lazy = false },
+    {
+        "stevearc/oil.nvim",
+        opts = {},
+        config = function()
+            require("configs.editor.oil")
+        end,
+    },
     -- UI
     {
         "nvim-treesitter/nvim-treesitter",
@@ -169,6 +179,7 @@ local plugins = {
         end,
     },
     -- Languages
+    -- Dart
     {
         "akinsho/flutter-tools.nvim",
         lazy = false,
@@ -188,6 +199,20 @@ local plugins = {
         },
         config = function()
             require("configs.languages.dart")
+        end,
+    },
+
+    -- Rust
+    {
+        "rust-lang/rust.vim",
+        init = function()
+            vim.g.rustfmt_autosave = 1
+        end,
+    },
+    {
+        "simrat39/rust-tools.nvim",
+        config = function()
+            require("configs.languages.rust")
         end,
     },
 }

@@ -40,7 +40,7 @@ local options = {
     },
     pickers = {
         diagnostics = {
-            previewer = false,
+            previewers = false,
             line_width = 0.7,
             no_unlisted = true,
             path_display = {
@@ -48,7 +48,7 @@ local options = {
             },
         },
         find_files = {
-            previewer = false,
+            previewer = true,
         },
         oldfiles = {
             previewer = false,
@@ -87,13 +87,22 @@ local options = {
             override_generic_sorter = true,
             override_file_sorter = true,
         },
+        project = {
+            base_dirs = {
+                "~/.emacs.d/",
+                "~/.config/nvim/",
+                { "~/project", max_depth = 4 },
+            },
+        },
     },
 }
 
 telescope.setup(options)
 telescope.load_extension("ui-select")
 telescope.load_extension("fzy_native")
+telescope.load_extension("project")
 
+keymap.set("n", "<Leader>p", require("telescope").extensions.project.project, { desc = "Telescope: Projects" })
 keymap.set("n", "<Leader>0", require("telescope.builtin").oldfiles, { desc = "Telescope: Lists previously open files" })
 keymap.set(
     "n",

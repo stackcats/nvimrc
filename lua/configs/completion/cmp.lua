@@ -27,7 +27,6 @@ cmp.setup({
     },
     completion = {
         autocomplete = { cmp.TriggerEvent.TextChanged },
-        keyword_length = 3,
     },
     window = {
         completion = cmp_window,
@@ -35,6 +34,7 @@ cmp.setup({
     },
     sources = {
         { name = "nvim_lsp" },
+        { name = "nvim_lsp_signature_help" },
         { name = "path" },
         { name = "vsnip" },
         {
@@ -49,7 +49,9 @@ cmp.setup({
         { name = "codeium" },
     },
     mapping = {
-        ["<C-j>"] = cmp.mapping(function(fallback)
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+        ["<TAB>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif vim.fn["vsnip#available"](1) == 1 then
@@ -60,7 +62,7 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-        ["<C-k>"] = cmp.mapping(function(fallback)
+        ["<S-TAB>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif vim.fn["vsnip#jumpable"](-1) == 1 then
@@ -71,10 +73,6 @@ cmp.setup({
         end, { "i", "s" }),
         ["<C-g>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
-        ["<Tab>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
