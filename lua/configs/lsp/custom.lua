@@ -35,5 +35,7 @@ function custom_attach(client)
     keymap.set("n", "<Leader>a", lsp_cmds.lsp_document_symbols, { desc = "LSP: List LSP document symbols" })
     keymap.set("n", "ga", lsp_cmds.code_action, { buffer = true, desc = "LSP: List LSP actions" })
     keymap.set("n", "gd", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })
+    keymap.set("i", "<C-.>", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })
+    keymap.set("i", "<C-,>", "<C-o><C-o>", { buffer = true, desc = "LSP: Goto definition" })
     keymap.set("n", "gR", lsp_cmds.rename, { buffer = true, desc = "LSP: Rename references" })
 end

@@ -8,6 +8,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp-vsnip": { "branch": "main", "commit": "989a8a73c44e926199bfd05fa7a516d51f2d2752" },
   "codeium.nvim": { "branch": "main", "commit": "822e762567a0bf50b1a4e733c8c93691934d7606" },
+  "crates.nvim": { "branch": "main", "commit": "406295abeb7eedae3bcee3f0db690ada605c629c" },
   "dart-vim-plugin": { "branch": "master", "commit": "928302ec931caf0dcf21835cca284ccd2b192f7b" },
   "dashboard-nvim": { "branch": "master", "commit": "63df28409d940f9cac0a925df09d3dc369db9841" },
   "dressing.nvim": { "branch": "master", "commit": "fe3071330a0720ce3695ac915820c8134b22d1b0" },

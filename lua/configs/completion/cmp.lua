@@ -47,6 +47,7 @@ cmp.setup({
         },
         { name = "nvim_lua" },
         { name = "codeium" },
+        { name = "crates" },
     },
     mapping = {
         ["<C-n>"] = cmp.mapping.select_next_item(),
