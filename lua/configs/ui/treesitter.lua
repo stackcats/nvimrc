@@ -1,11 +1,14 @@
 local opt = {
     ensure_installed = {
+        "bash",
         "dart",
         "lua",
         "markdown",
         "markdown_inline",
+        "regex",
         "rust",
         "python",
+        "vim",
     },
     highlight = {
         enable = true,

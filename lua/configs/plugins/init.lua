@@ -157,6 +157,18 @@ local plugins = {
             require("configs.editor.oil")
         end,
     },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {},
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+        config = function()
+            require("configs.editor.noice")
+        end,
+    },
     -- UI
     {
         "nvim-treesitter/nvim-treesitter",
