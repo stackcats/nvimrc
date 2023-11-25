@@ -138,7 +138,6 @@ local plugins = {
     },
     {
         "t9md/vim-choosewin",
-        cmd = { "ChooseWin" },
         config = function()
             require("configs.editor.choosewin")
         end,
