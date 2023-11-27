@@ -169,6 +169,18 @@ local plugins = {
             require("configs.editor.noice")
         end,
     },
+    {
+        "akinsho/toggleterm.nvim",
+        event = "VeryLazy",
+        version = "*",
+        opts = {
+            open_mapping = "<c-s>",
+            direction = "float",
+            float_opts = {
+                border = "curved",
+            },
+        },
+    },
     -- UI
     {
         "nvim-treesitter/nvim-treesitter",
