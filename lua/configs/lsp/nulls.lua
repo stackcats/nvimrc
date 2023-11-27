@@ -17,19 +17,35 @@ nulls.setup({
     end,
     sources = {
         debug = true,
+        -- elixir
+        nulls.builtins.formatting.mix,
+        nulls.builtins.diagnostics.credo,
+        -- golang
+        nulls.builtins.formatting.goimports,
+        nulls.builtins.formatting.gofmt,
+        nulls.builtins.diagnostics.staticcheck,
         -- lua
         nulls.builtins.formatting.stylua,
+        nulls.builtins.diagnostics.selene,
         -- python
         nulls.builtins.formatting.black,
+        nulls.builtins.diagnostics.ruff,
+        nulls.builtins.diagnostics.mypy,
     },
 })
 
 require("mason-null-ls").setup({
     ensure_installed = {
+        "mix",
+        "credo",
+        "goimports",
+        "gofmt",
+        "staticcheck",
         "black",
         "ruff",
         "stylua",
         "selene",
+        "mypy",
     },
     automatic_installation = true,
 })

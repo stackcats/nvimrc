@@ -13,7 +13,15 @@ vim.opt.expandtab = true
 vim.wo.number = true
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = {
+        source = "always",
+        format = function(diagnostic)
+            local lines = vim.split(diagnostic.message, "\n")
+            return lines[1]
+        end,
+        virt_text_pos = "right_align",
+    },
+    severity_sort = true,
     update_in_insert = true,
     underline = true,
     signs = false,

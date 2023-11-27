@@ -11,6 +11,7 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "pyright",
         "rust_analyzer",
+        "gopls",
     },
 })
 
@@ -33,6 +34,7 @@ lspconfig.lua_ls.setup({
 
 local default_servers = {
     "pyright",
+    "gopls",
 }
 
 for _, svr in ipairs(default_servers) do

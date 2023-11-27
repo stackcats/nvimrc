@@ -111,6 +111,7 @@ keymap.set(
     { desc = "Telescope: Lists open buffers in current neovim instance" }
 )
 keymap.set("n", "<Leader>f", require("telescope.builtin").find_files, { desc = "Telescope: Open files" })
+keymap.set("n", "<Leader>t", require("telescope.builtin").treesitter, { desc = "Telescope: Treesitter Picker" })
 keymap.set("n", "<Leader>m", require("telescope.builtin").marks, { desc = "Telescope: Lists vim marks" })
 keymap.set("n", "<Leader><Leader>", require("telescope.builtin").builtin, { desc = "Telescope: Open builtin function" })
 keymap.set(
