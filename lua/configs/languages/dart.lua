@@ -19,4 +19,9 @@ require("flutter-tools").setup({
         end,
         capabilities = custom_capabilities(),
     },
+    decorations = {
+        statusline = {
+            app_version = true,
+        },
+    },
 })

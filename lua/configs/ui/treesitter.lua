@@ -9,6 +9,7 @@ local opt = {
         "rust",
         "python",
         "vim",
+        "go",
     },
     highlight = {
         enable = true,

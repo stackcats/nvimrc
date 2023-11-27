@@ -93,6 +93,13 @@ local options = {
                 "~/.config/nvim/",
                 { "~/project", max_depth = 4 },
             },
+            on_project_selected = function(prompt_bufnr)
+                require("lualine").refresh({
+                    scope = "window",
+                    place = { "statusline" },
+                })
+                require("telescope._extensions.project.actions").find_project_files(prompt_bufnr, false)
+            end,
         },
     },
 }
