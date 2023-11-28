@@ -9,7 +9,7 @@ function custom_capabilities()
     return capabilities
 end
 
-function custom_attach(client)
+function custom_attach(_client)
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
         signs = false,
@@ -34,7 +34,7 @@ function custom_attach(client)
     keymap.set("n", "<Leader>a", lsp_cmds.lsp_document_symbols, { desc = "LSP: List LSP document symbols" })
     keymap.set("n", "ga", lsp_cmds.code_action, { buffer = true, desc = "LSP: List LSP actions" })
     keymap.set("n", "gd", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })
-    keymap.set("i", "<C-.>", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })
-    keymap.set("i", "<C-,>", "<C-o><C-o>", { buffer = true, desc = "LSP: Goto definition" })
+    keymap.set("i", "<C-]>", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })
+    keymap.set("i", "<C-[>", "<C-o><C-o>", { buffer = true, desc = "LSP: Goto definition" })
     keymap.set("n", "gR", lsp_cmds.rename, { buffer = true, desc = "LSP: Rename references" })
 end
