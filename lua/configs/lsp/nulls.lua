@@ -17,6 +17,8 @@ nulls.setup({
     end,
     sources = {
         debug = true,
+        nulls.builtins.diagnostics.typos,
+
         -- elixir
         nulls.builtins.formatting.mix,
         nulls.builtins.diagnostics.credo,
