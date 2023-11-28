@@ -25,6 +25,7 @@ local plugins = {
             require("configs.ui.colorscheme")
         end,
     },
+    { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
     -- completions
     {
         "hrsh7th/nvim-cmp",
@@ -187,6 +188,10 @@ local plugins = {
         config = function()
             require("nvim-surround").setup({})
         end,
+    },
+    {
+        "folke/todo-comments.nvim",
+        opts = {},
     },
     -- UI
     {
