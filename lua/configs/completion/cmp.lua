@@ -45,7 +45,7 @@ cmp.setup({
             },
         },
         { name = "nvim_lua" },
-        --{ name = "codeium" },
+        { name = "codeium" },
         { name = "crates" },
     },
     mapping = {
