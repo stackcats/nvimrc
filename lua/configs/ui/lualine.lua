@@ -179,11 +179,11 @@ ins_left({
 -- Add components to right sections
 ins_right({
     function()
-        if vim.bo.filetype ~= "dart" then
-            return ""
-        end
         local decorations = vim.g.flutter_tools_decorations or {}
         return decorations.app_version or ""
+    end,
+    cond = function()
+        return vim.bo.filetype == "dart"
     end,
     color = { fg = colors.violet, gui = "bold" },
 })
