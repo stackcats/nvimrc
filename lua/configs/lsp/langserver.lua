@@ -12,6 +12,7 @@ require("mason-lspconfig").setup({
         "pyright",
         "rust_analyzer",
         "gopls",
+        "elixirls",
     },
 })
 
@@ -30,6 +31,13 @@ lspconfig.lua_ls.setup({
             },
         },
     },
+})
+
+lspconfig.elixirls.setup({
+    cmd = { "elixir-ls" },
+    on_attach = custom_attach,
+    capabilities = custom_capabilities(),
+    on_init = on_init,
 })
 
 local default_servers = {

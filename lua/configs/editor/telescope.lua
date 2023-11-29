@@ -46,6 +46,10 @@ local options = {
             path_display = {
                 "hidden",
             },
+            layout_strategy = "vertical",
+            layout_config = {
+                width = 0.7,
+            },
         },
         find_files = {
             previewer = true,

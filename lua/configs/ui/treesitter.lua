@@ -10,6 +10,9 @@ local opt = {
         "python",
         "vim",
         "go",
+        "elixir",
+        "heex",
+        "eex",
     },
     highlight = {
         enable = true,

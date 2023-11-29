@@ -38,15 +38,16 @@ nulls.setup({
 
 require("mason-null-ls").setup({
     ensure_installed = {
+        "typos",
         "mix",
         "credo",
         "goimports",
         "gofmt",
         "staticcheck",
-        "black",
-        "ruff",
         "stylua",
         "selene",
+        "black",
+        "ruff",
         "mypy",
     },
     automatic_installation = true,
