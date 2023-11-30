@@ -27,6 +27,7 @@ cmp.setup({
     },
     completion = {
         autocomplete = { cmp.TriggerEvent.TextChanged },
+        keyword_length = 3,
     },
     window = {
         completion = cmp_window,
@@ -77,6 +78,14 @@ cmp.setup({
             select = true,
         }),
     },
+})
+
+cmp.setup.filetype("oil", {
+    sources = cmp.config.sources({
+        { name = "path" },
+    }, {
+        { name = "buffer" },
+    }),
 })
 
 -- Register confirmation event for autopairs
