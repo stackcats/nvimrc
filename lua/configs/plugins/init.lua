@@ -213,6 +213,13 @@ local plugins = {
             require("configs.ui.colorizer")
         end,
     },
+    {
+        "echasnovski/mini.indentscope",
+        version = "*",
+        config = function()
+            require("mini.indentscope").setup()
+        end,
+    },
     -- Languages
     -- Dart
     {
