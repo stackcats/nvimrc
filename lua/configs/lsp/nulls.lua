@@ -16,7 +16,6 @@ nulls.setup({
         end
     end,
     sources = {
-        debug = true,
         nulls.builtins.diagnostics.typos,
 
         -- elixir

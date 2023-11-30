@@ -20,7 +20,7 @@ local opt = {
     },
     indent = {
         enable = true,
-        disable = { "python" },
+        disable = { "python", "dart" },
     },
     autopairs = {
         enable = true,
