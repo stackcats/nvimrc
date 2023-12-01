@@ -88,5 +88,13 @@ cmp.setup.filetype("oil", {
     }),
 })
 
+cmp.setup.filetype("toggleterm", {
+    sources = cmp.config.sources({
+        { name = "path" },
+    }, {
+        { name = "buffer" },
+    }),
+})
+
 -- Register confirmation event for autopairs
 cmp.event:on("confirm_done", nvim_autopairs.on_confirm_done())
