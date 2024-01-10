@@ -22,7 +22,7 @@ vim.diagnostic.config({
         virt_text_pos = "right_align",
     },
     severity_sort = true,
-    update_in_insert = true,
+    -- update_in_insert = true,
     underline = true,
     signs = false,
 })

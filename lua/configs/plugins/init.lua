@@ -270,6 +270,7 @@ local plugins = {
             })
         end,
     },
+    { "rose-pine/neovim", name = "rose-pine" },
 }
 
 require("lazy").setup(plugins, {
