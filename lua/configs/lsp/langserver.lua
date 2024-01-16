@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
         "rust_analyzer",
         "gopls",
         "elixirls",
+        "clojure_lsp",
     },
 })
 

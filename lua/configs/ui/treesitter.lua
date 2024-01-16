@@ -1,6 +1,7 @@
 local opt = {
     ensure_installed = {
         "bash",
+        "clojure",
         "dart",
         "lua",
         "markdown",

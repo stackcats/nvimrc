@@ -18,6 +18,8 @@ nulls.setup({
     sources = {
         nulls.builtins.diagnostics.typos,
 
+        -- clojure
+        nulls.builtins.formatting.zprint,
         -- elixir
         nulls.builtins.formatting.mix,
         nulls.builtins.diagnostics.credo,
@@ -38,6 +40,7 @@ nulls.setup({
 require("mason-null-ls").setup({
     ensure_installed = {
         "typos",
+        "zprint",
         "mix",
         "credo",
         "goimports",
