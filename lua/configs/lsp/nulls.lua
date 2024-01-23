@@ -32,6 +32,8 @@ nulls.setup({
         -- lua
         nulls.builtins.formatting.stylua,
         nulls.builtins.diagnostics.selene,
+        -- nim
+        nulls.builtins.formatting.nimpretty,
         -- python
         nulls.builtins.formatting.black,
         nulls.builtins.diagnostics.ruff,

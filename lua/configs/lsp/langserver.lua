@@ -15,6 +15,7 @@ require("mason-lspconfig").setup({
         "elixirls",
         "clojure_lsp",
         "clangd",
+        "nim_langserver",
     },
 })
 
@@ -52,6 +53,7 @@ lspconfig.clangd.setup({
 local default_servers = {
     "pyright",
     "gopls",
+    "nim_langserver",
 }
 
 for _, svr in ipairs(default_servers) do

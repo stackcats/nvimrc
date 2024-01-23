@@ -7,6 +7,7 @@ local opt = {
         "lua",
         "markdown",
         "markdown_inline",
+        "nim",
         "regex",
         "rust",
         "python",
