@@ -14,6 +14,7 @@ require("mason-lspconfig").setup({
         "gopls",
         "elixirls",
         "clojure_lsp",
+        "clangd",
     },
 })
 
@@ -36,6 +37,13 @@ lspconfig.lua_ls.setup({
 
 lspconfig.elixirls.setup({
     cmd = { "elixir-ls" },
+    on_attach = custom_attach,
+    capabilities = custom_capabilities(),
+    on_init = on_init,
+})
+
+lspconfig.clangd.setup({
+    cmd = { "clangd", "--offset-encoding=utf-16" },
     on_attach = custom_attach,
     capabilities = custom_capabilities(),
     on_init = on_init,

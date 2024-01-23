@@ -20,6 +20,8 @@ nulls.setup({
 
         -- clojure
         nulls.builtins.formatting.zprint,
+        -- cpp
+        nulls.builtins.formatting.clang_format,
         -- elixir
         nulls.builtins.formatting.mix,
         nulls.builtins.diagnostics.credo,
@@ -41,6 +43,7 @@ require("mason-null-ls").setup({
     ensure_installed = {
         "typos",
         "zprint",
+        "clang_format",
         "mix",
         "credo",
         "goimports",
