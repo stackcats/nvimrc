@@ -16,6 +16,7 @@ local opt = {
         "elixir",
         "heex",
         "eex",
+        "zig",
     },
     highlight = {
         enable = true,

@@ -16,6 +16,7 @@ require("mason-lspconfig").setup({
         "clojure_lsp",
         "clangd",
         "nim_langserver",
+        "zls",
     },
 })
 
@@ -48,6 +49,15 @@ lspconfig.clangd.setup({
     on_attach = custom_attach,
     capabilities = custom_capabilities(),
     on_init = on_init,
+})
+
+lspconfig.zls.setup({
+    cmd = { "zls" },
+    filetypes = { "zig", "zirc" },
+    on_attach = custom_attach,
+    capabilities = custom_capabilities(),
+    root_dir = util.root_pattern("build.zig", "build.zir", "zls.json", ".git"),
+    single_file_support = true,
 })
 
 local default_servers = {
