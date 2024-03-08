@@ -201,6 +201,12 @@ local plugins = {
         end,
     },
     {
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function()
+            require("treesitter-context")
+        end,
+    },
+    {
         "nvim-lualine/lualine.nvim",
         config = function()
             require("configs.ui.lualine")
@@ -219,6 +225,10 @@ local plugins = {
         config = function()
             require("mini.indentscope").setup()
         end,
+    },
+    {
+        "folke/twilight.nvim",
+        opts = {},
     },
     -- Languages
     -- Dart
