@@ -17,6 +17,8 @@ require("mason-lspconfig").setup({
         "clangd",
         "nim_langserver",
         "zls",
+        "ruff_lsp",
+        "typos_lsp",
     },
 })
 
@@ -64,6 +66,8 @@ local default_servers = {
     "pyright",
     "gopls",
     "nim_langserver",
+    "ruff_lsp",
+    "typos_lsp",
 }
 
 for _, svr in ipairs(default_servers) do

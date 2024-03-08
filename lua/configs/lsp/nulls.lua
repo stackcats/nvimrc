@@ -16,8 +16,6 @@ nulls.setup({
         end
     end,
     sources = {
-        nulls.builtins.diagnostics.typos,
-
         -- clojure
         nulls.builtins.formatting.zprint,
         -- cpp
@@ -36,7 +34,6 @@ nulls.setup({
         nulls.builtins.formatting.nimpretty,
         -- python
         nulls.builtins.formatting.black,
-        nulls.builtins.diagnostics.ruff,
         nulls.builtins.diagnostics.mypy,
     },
 })
