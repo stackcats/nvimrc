@@ -93,7 +93,6 @@ local options = {
         },
         project = {
             base_dirs = {
-                "~/.emacs.d/",
                 "~/.config/nvim/",
                 { "~/project", max_depth = 4 },
             },
