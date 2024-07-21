@@ -17,6 +17,7 @@ local opt = {
         "heex",
         "eex",
         "zig",
+        "ocaml",
     },
     highlight = {
         enable = true,

@@ -19,6 +19,7 @@ require("mason-lspconfig").setup({
         "zls",
         "ruff_lsp",
         "typos_lsp",
+        "ocamllsp",
     },
 })
 
@@ -68,6 +69,7 @@ local default_servers = {
     "nim_langserver",
     "ruff_lsp",
     "typos_lsp",
+    "ocamllsp",
 }
 
 for _, svr in ipairs(default_servers) do

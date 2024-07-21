@@ -32,6 +32,8 @@ nulls.setup({
         nulls.builtins.diagnostics.selene,
         -- nim
         nulls.builtins.formatting.nimpretty,
+        -- ocaml
+        nulls.builtins.formatting.ocamlformat,
         -- python
         nulls.builtins.formatting.black,
         nulls.builtins.diagnostics.mypy,
@@ -53,6 +55,7 @@ require("mason-null-ls").setup({
         "black",
         "ruff",
         "mypy",
+        "ocamlformat",
     },
     automatic_installation = true,
 })
