@@ -37,6 +37,7 @@ local options = {
             preview_cutoff = 1,
             height = 0.6,
         },
+        wrap_results = true,
     },
     pickers = {
         diagnostics = {
