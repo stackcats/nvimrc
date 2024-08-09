@@ -1,14 +1,14 @@
 require("kanagawa").setup({
+    colors = {
+        theme = {
+            all = {
+                ui = {
+                    bg_gutter = "none",
+                },
+            },
+        },
+    },
     -- transparent = true,
-    overrides = function(colors)
-        return {
-            NoiceCmdlinePopupBorder = { link = "TelescopePromptBorder" },
-            NoiceCmdlinePopupTitle = { link = "TelescopePromptBorder" },
-            NoiceCmdlineIcon = { link = "TelescopePromptBorder" },
-            LineNr = { bg = "none" },
-            SignColumn = { bg = "none" },
-        }
-    end,
 })
 
 vim.cmd("colorscheme kanagawa")

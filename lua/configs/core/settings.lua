@@ -13,18 +13,23 @@ vim.opt.expandtab = true
 vim.wo.number = true
 
 vim.diagnostic.config({
-    virtual_text = {
-        source = "always",
-        format = function(diagnostic)
-            local lines = vim.split(diagnostic.message, "\n")
-            return lines[1]
-        end,
-        virt_text_pos = "right_align",
-    },
+    virtual_text = false,
+    virtual_lines = true,
     severity_sort = true,
     -- update_in_insert = true,
     underline = true,
-    signs = false,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+        },
+        numhl = {
+            [vim.diagnostic.severity.WARN] = "WarningMsg",
+            [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+            [vim.diagnostic.severity.INFO] = "InfoMsg",
+        },
+    },
 })
 
 if jit.os == "OSX" then

@@ -12,4 +12,15 @@ require("lspsaga").setup({
         color_mode = true,
         separator = " ❱ ",
     },
+    diagnostic = {
+        max_height = 0.8,
+        keys = {
+            quit = { "q", "<ESC>" },
+        },
+    },
+})
+
+vim.keymap.set("n", "t", "<CMD>Lspsaga term_toggle<CR>", {
+    buffer = true,
+    desc = "Lspsaga: Toggle terminal",
 })

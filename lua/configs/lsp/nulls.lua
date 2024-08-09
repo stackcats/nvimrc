@@ -51,7 +51,7 @@ require("mason-null-ls").setup({
         "gofmt",
         "staticcheck",
         "stylua",
-        "selene",
+        -- "selene",
         "black",
         "ruff",
         "mypy",

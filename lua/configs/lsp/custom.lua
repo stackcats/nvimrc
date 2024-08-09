@@ -10,16 +10,10 @@ function custom_capabilities()
 end
 
 function custom_attach(_client)
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        signs = false,
-        virtual_text = { spacing = 4, prefix = "❰" },
-    })
-
     local keymap = vim.keymap
 
     local lsp_cmds = {
-        hover_doc = "<CMD>Lspsaga hover_doc<CR>",
+        hover_doc = "<CMD>Lspsaga hover_doc ++keep<CR>",
         lsp_document_symbols = require("telescope.builtin").lsp_document_symbols,
         code_action = "<CMD>Lspsaga code_action<CR>",
         goto_definition = "<CMD>Lspsaga goto_definition<CR>",
@@ -34,6 +28,8 @@ function custom_attach(_client)
     keymap.set("n", "<Leader>a", lsp_cmds.lsp_document_symbols, { desc = "LSP: List LSP document symbols" })
     keymap.set("n", "ga", lsp_cmds.code_action, { buffer = true, desc = "LSP: List LSP actions" })
     keymap.set("n", "gd", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })
+    keymap.set("n", "gn", lsp_cmds.diagnostic_jump_next, { buffer = true, desc = "LSP: Jump next error" })
+    keymap.set("n", "gp", lsp_cmds.diagnostic_jump_prev, { buffer = true, desc = "LSP: Jump prev error" })
     keymap.set("i", "<M-.>", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })
     keymap.set("i", "<M-,>", "<C-o><C-o>", { buffer = true, desc = "LSP: Goto definition" })
     keymap.set("n", "gR", lsp_cmds.rename, { buffer = true, desc = "LSP: Rename references" })

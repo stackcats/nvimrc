@@ -86,6 +86,12 @@ local plugins = {
             require("configs.lsp.langserver")
         end,
     },
+    {
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    },
     -- AI
     {
         "Exafunction/codeium.nvim",
@@ -173,18 +179,6 @@ local plugins = {
         config = function()
             require("configs.editor.noice")
         end,
-    },
-    {
-        "akinsho/toggleterm.nvim",
-        event = "VeryLazy",
-        version = "*",
-        opts = {
-            open_mapping = "<c-s>",
-            direction = "float",
-            float_opts = {
-                border = "curved",
-            },
-        },
     },
     {
         "kylechui/nvim-surround",
