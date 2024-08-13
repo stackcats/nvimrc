@@ -63,13 +63,21 @@ lspconfig.zls.setup({
     single_file_support = true,
 })
 
+lspconfig.ocamllsp.setup({
+    settings = {
+        codelens = { enable = true },
+    },
+    on_attach = custom_attach,
+    capabilities = custom_capabilities(),
+    on_init = on_init,
+})
+
 local default_servers = {
     "pyright",
     "gopls",
     "nim_langserver",
     "ruff_lsp",
     "typos_lsp",
-    "ocamllsp",
 }
 
 for _, svr in ipairs(default_servers) do
