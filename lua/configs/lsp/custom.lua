@@ -9,7 +9,7 @@ function custom_capabilities()
     return capabilities
 end
 
-function custom_attach(_client)
+function custom_attach()
     local keymap = vim.keymap
 
     local lsp_cmds = {

@@ -1,22 +1,21 @@
 require("configs.lsp.custom")
 
-local rt = require("rust-tools")
-
-rt.setup({
-    tools = {
-        runnables = {
-            use_telescope = true,
-        },
-        inlay_hints = {
-            auto = true,
-            show_parameter_hints = false,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
-        },
-    },
+vim.g.rustaceanvim = {
     server = {
         on_init = on_init,
-        on_attach = custom_attach,
+        on_attach = function(client, bufnr)
+            custom_attach(client, bufnr)
+            local format_sync_grp = vim.api.nvim_create_augroup("RustaceanFormat", {})
+
+            -- format file
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = bufnr,
+                callback = function()
+                    vim.lsp.buf.format()
+                end,
+                group = format_sync_grp,
+            })
+        end,
         capabilities = custom_capabilities(),
         settings = {
             ["rust-analyzer"] = {
@@ -26,4 +25,4 @@ rt.setup({
             },
         },
     },
-})
+}

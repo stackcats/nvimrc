@@ -14,7 +14,7 @@ vim.wo.number = true
 
 vim.diagnostic.config({
     virtual_text = false,
-    virtual_lines = true,
+    virtual_lines = { only_current_line = true },
     severity_sort = true,
     -- update_in_insert = true,
     underline = true,

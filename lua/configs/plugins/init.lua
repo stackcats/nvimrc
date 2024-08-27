@@ -25,7 +25,8 @@ local plugins = {
             require("configs.ui.colorscheme")
         end,
     },
-    { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
+    { "rose-pine/neovim", name = "rose-pine" },
     -- completions
     {
         "hrsh7th/nvim-cmp",
@@ -91,6 +92,11 @@ local plugins = {
         config = function()
             require("lsp_lines").setup()
         end,
+    },
+    {
+        "chrisgrieser/nvim-lsp-endhints",
+        event = "LspAttach",
+        opts = {}, -- required, even if empty
     },
     -- AI
     {
@@ -255,31 +261,12 @@ local plugins = {
 
     -- Rust
     {
-        "rust-lang/rust.vim",
-        init = function()
-            vim.g.rustfmt_autosave = 1
-        end,
-    },
-    {
-        "simrat39/rust-tools.nvim",
+        "mrcjkb/rustaceanvim",
+        version = "^5",
         config = function()
             require("configs.languages.rust")
         end,
     },
-    {
-        "saecki/crates.nvim",
-        event = { "BufRead Cargo.toml" },
-        config = function()
-            require("crates").setup({
-                src = {
-                    cmp = {
-                        enabled = true,
-                    },
-                },
-            })
-        end,
-    },
-    { "rose-pine/neovim", name = "rose-pine" },
 }
 
 require("lazy").setup(plugins, {
