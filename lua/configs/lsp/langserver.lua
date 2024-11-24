@@ -17,7 +17,7 @@ require("mason-lspconfig").setup({
         "clangd",
         "nim_langserver",
         "zls",
-        "ruff_lsp",
+        "ruff",
         "typos_lsp",
         "ocamllsp",
     },
@@ -76,7 +76,7 @@ local default_servers = {
     "pyright",
     "gopls",
     "nim_langserver",
-    "ruff_lsp",
+    "ruff",
     "typos_lsp",
 }
 

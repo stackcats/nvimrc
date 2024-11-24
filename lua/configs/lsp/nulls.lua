@@ -53,7 +53,6 @@ require("mason-null-ls").setup({
         "stylua",
         -- "selene",
         "black",
-        "ruff",
         "mypy",
         "ocamlformat",
     },
