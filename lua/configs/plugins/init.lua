@@ -88,15 +88,26 @@ local plugins = {
         end,
     },
     {
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        config = function()
-            require("lsp_lines").setup()
-        end,
-    },
-    {
         "chrisgrieser/nvim-lsp-endhints",
         event = "LspAttach",
         opts = {}, -- required, even if empty
+    },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "LspAttach",
+        priority = 1000,
+        config = function()
+            require("tiny-inline-diagnostic").setup({
+                presets = "classic",
+                options = {
+                    show_source = true,
+                    multilines = {
+                        enabled = true,
+                        always_show = true,
+                    },
+                },
+            })
+        end,
     },
     -- AI
     {
