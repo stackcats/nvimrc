@@ -3,8 +3,7 @@ vim.g.maplocalleader = " "
 
 vim.loader.enable()
 
-require("configs.core.settings")
+require("stackcats.core")
+require("stackcats.lazy")
 
-require("configs.plugins")
-
-require("configs.core.keys")
+vim.cmd("colorscheme catppuccin-mocha")
