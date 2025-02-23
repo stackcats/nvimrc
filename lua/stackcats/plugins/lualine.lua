@@ -209,7 +209,6 @@ return {
       },
       sections = {
         lualine_a = {
-          "filetype",
           modes,
         },
         lualine_b = {
