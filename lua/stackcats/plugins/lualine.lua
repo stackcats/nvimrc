@@ -131,7 +131,8 @@ local get_lsp_name = function()
   end
   local lst = {}
   for _, client in ipairs(clients) do
-    if client.name ~= "null-ls" then
+    local filetypes = client.config.filetypes
+    if not filetypes or vim.fn.index(filetypes, buf_ft) ~= -1 then
       table.insert(lst, client.name)
     end
   end
@@ -208,6 +209,7 @@ return {
       },
       sections = {
         lualine_a = {
+          "filetype",
           modes,
         },
         lualine_b = {
@@ -234,6 +236,5 @@ return {
       },
     })
     vim.o.laststatus = vim.g.lualine_laststatus
-    local a = 10
   end,
 }

@@ -16,7 +16,6 @@ return {
   },
   config = function()
     local cmp = require("cmp")
-    local nvim_autopairs = require("nvim-autopairs.completion.cmp")
 
     local function is_cursor_at_beginning_of_line()
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
