@@ -5,6 +5,7 @@ return {
   opts = {
     picker = {},
     lazygit = {},
+    terminal = {},
     dashboard = {
       preset = {
         keys = {
@@ -27,7 +28,11 @@ return {
         enabled = false,
       },
       scope = {
-        char = "",
+        -- char = "",
+        enabled = false,
+      },
+      chunk = {
+        enabled = true,
       },
     },
     notifier = {},
@@ -54,6 +59,8 @@ return {
     { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
     -- git
     { "<leader>g", function() Snacks.lazygit() end, desc = "Lazygit" },
+
+    { "<c-/>",      function() Snacks.terminal() end, mode = {"n", "t"}, desc = "Toggle Terminal" },
     -- stylua: ignore end
   },
 }

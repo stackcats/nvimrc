@@ -14,6 +14,14 @@ return {
       python = { "isort", "black" },
     }
 
+    local formatters = {
+      rustfmt = {
+        options = {
+          default_edition = "2021",
+        },
+      },
+    }
+
     conform.setup({
       formatters_by_ft = formatters_by_ft,
       format_on_save = {
@@ -21,6 +29,7 @@ return {
         async = false,
         timeout_ms = 500,
       },
+      formatters == formatters,
     })
 
     vim.keymap.set({ "n", "v" }, "<leader>x", function()
