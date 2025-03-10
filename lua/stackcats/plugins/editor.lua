@@ -16,9 +16,13 @@ return {
   },
   {
     "stevearc/oil.nvim",
-    opts = {},
-    config = function()
-      require("oil").setup({})
+    opts = {
+      keymaps = {
+        ["gO"] = "actions.copy_entry_filename",
+      },
+    },
+    config = function(_, opts)
+      require("oil").setup(opts)
 
       vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
     end,
