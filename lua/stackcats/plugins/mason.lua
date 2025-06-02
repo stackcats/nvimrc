@@ -39,14 +39,16 @@ return {
       -- linters
       "staticcheck",
       "mypy",
+      {
+        "selene",
+        condition = function()
+          -- for macos (intel)
+          -- cargo install selene
+          -- ln -fsv $(which selene) $HOME/.local/share/nvim/mason/bin
+          return not (jit.os == "OSX" and jit.arch == "x64")
+        end,
+      },
     }
-
-    if not (jit.os == "OSX" and jit.arch == "x64") then
-      -- for macos (intel)
-      -- cargo install selene
-      -- ln -fsv $(which selene) $HOME/.local/share/nvim/mason/bin
-      table.insert(ensure_installed, "selene")
-    end
 
     require("mason-tool-installer").setup({
       ensure_installed = ensure_installed,
