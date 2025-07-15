@@ -54,7 +54,13 @@ return {
           name = "buffer",
           option = {
             get_bufnrs = function()
-              return vim.api.nvim_list_bufs()
+              local bufs = {}
+              for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+                if vim.api.nvim_buf_get_option(bufnr, "buftype") ~= "terminal" then
+                  table.insert(bufs, bufnr)
+                end
+              end
+              return bufs
             end,
           },
         },

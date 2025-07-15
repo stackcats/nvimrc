@@ -25,6 +25,16 @@ return {
           recursive_run = true,
         }),
       },
+      output = {
+        open_on_run = "short",
+      },
+      icons = {
+        passed = "",
+        failed = "", -- nf-fa-times
+        running = "", -- nf-fa-spinner
+        skipped = "", -- nf-fa-minus_circle
+        unknown = "", -- nf-fa-question_circle
+      },
     })
   end,
   keys = {
