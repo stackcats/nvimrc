@@ -23,6 +23,7 @@ return {
         },
       },
     },
+    --[[
     indent = {
       indent = {
         enabled = false,
@@ -35,6 +36,8 @@ return {
         enabled = true,
       },
     },
+    ]]
+    --
     notifier = {},
   },
   keys = {

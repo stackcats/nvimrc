@@ -8,7 +8,7 @@ return {
       clojure = { "zprint" },
       cpp = { "clang-format" },
       elixir = { "mix" },
-      go = { "goimports", "gofumpt" },
+      go = { "goimports", "gofmt" },
       lua = { "stylua" },
       ocaml = { "ocamlformat" },
       python = { "isort", "black" },
@@ -27,7 +27,7 @@ return {
       format_on_save = {
         lsp_fallback = true,
         async = false,
-        timeout_ms = 500,
+        timeout_ms = 2500,
       },
       formatters == formatters,
     })
