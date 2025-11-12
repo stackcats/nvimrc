@@ -52,14 +52,16 @@ return {
 
     local custom = require("stackcats.plugins.utils.lsp")
 
-    local lspconfig = require("lspconfig")
-
     for svr, opt in pairs(servers) do
-      lspconfig[svr].setup(merge(opt, {
-        on_attach = custom.attach,
-        capabilities = custom.capabilities(),
-        on_init = custom.on_init,
-      }))
+      vim.lsp.config(
+        svr,
+        merge(opt, {
+          on_attach = custom.attach,
+          capabilities = custom.capabilities(),
+          on_init = custom.on_init,
+        })
+      )
+      vim.lsp.enable(svr)
     end
   end,
 }
