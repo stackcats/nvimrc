@@ -48,6 +48,10 @@ return {
       gopls = {},
       ruff = {},
       typos_lsp = {},
+      kotlin_lsp = {
+        cmd = { "kotlin-lsp", "--stdio" },
+        single_file_support = true,
+      },
     }
 
     local custom = require("stackcats.plugins.utils.lsp")

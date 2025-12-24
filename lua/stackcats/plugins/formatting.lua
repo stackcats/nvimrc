@@ -12,6 +12,7 @@ return {
       lua = { "stylua" },
       ocaml = { "ocamlformat" },
       python = { "isort", "black" },
+      kotlin = { "ktfmt" },
     }
 
     local formatters = {

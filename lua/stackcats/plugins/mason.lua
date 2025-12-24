@@ -23,6 +23,7 @@ return {
         "ruff",
         "typos_lsp",
         "ocamllsp",
+        "kotlin_lsp",
       },
     })
 
@@ -36,6 +37,7 @@ return {
       "ocamlformat",
       "isort",
       "black",
+      "ktfmt",
 
       -- linters
       "staticcheck",
@@ -49,6 +51,7 @@ return {
           return not (jit.os == "OSX" and jit.arch == "x64")
         end,
       },
+      "ktlint",
     }
 
     require("mason-tool-installer").setup({
