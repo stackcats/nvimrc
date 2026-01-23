@@ -21,6 +21,9 @@ return {
           default_edition = "2021",
         },
       },
+      ktfmt = {
+        prepend_args = { "--kotlinlang-style" },
+      },
     }
 
     conform.setup({
