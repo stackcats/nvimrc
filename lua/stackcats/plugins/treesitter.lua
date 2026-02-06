@@ -1,5 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
+  build = ":TSUpdate",
   config = function()
     local opt = {
       ensure_installed = {
@@ -50,7 +52,7 @@ return {
       },
     }
 
-    require("nvim-treesitter.configs").setup(opt)
+    require("nvim-treesitter.config").setup(opt)
     vim.api.nvim_command("set foldmethod=expr")
     vim.api.nvim_command("set foldexpr=nvim_treesitter#foldexpr()")
     vim.api.nvim_command("set nofoldenable")
