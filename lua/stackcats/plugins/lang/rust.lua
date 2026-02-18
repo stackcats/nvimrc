@@ -22,7 +22,11 @@ return {
         end,
         capabilities = custom.capabilities(),
         settings = {
-          ["rust-analyzer"] = {},
+          ["rust-analyzer"] = {
+            notifications = {
+              cargoTomlNotFound = false,
+            },
+          },
         },
       },
     }

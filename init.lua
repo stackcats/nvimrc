@@ -6,4 +6,4 @@ vim.loader.enable()
 require("stackcats.core")
 require("stackcats.lazy")
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme rose-pine")
